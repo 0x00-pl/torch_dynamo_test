@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "torch-dynamo-example"
+version = "0.1.0"
+description = ""
+authors = ["0x00-pl <0x00.pl@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = {version = ">2", source = "tuna"}
+numpy = "^1.26.2"
+
+
+[[tool.poetry.source]]
+name = "tuna"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+priority = "primary"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
