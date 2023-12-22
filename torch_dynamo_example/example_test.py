@@ -2,13 +2,22 @@ from typing import List
 
 import torch
 from torch import _dynamo as torchdynamo
+from torch.fx.experimental.proxy_tensor import make_fx
+
+from torch_dynamo_example.graph_visiter.collect_ops import CollectOps
+
+
+collector = CollectOps()
 
 
 def my_compiler(gm: torch.fx.GraphModule, example_inputs: List[torch.Tensor]):
-    # print("my_compiler called with fx_graph:\n", gm.graph.print_tabular())
+    gm_fx = make_fx(gm, tracing_mode="real")(*example_inputs)
     print('=================')
-    print(gm.code)
-    return gm.forward
+    # print("my_compiler called with fx_graph:\n", gm.graph.print_tabular())
+    print(gm_fx.code)
+    collector.visit_moudle(gm_fx)
+    print(collector.op_set)
+    return gm_fx.forward
 
 
 @torchdynamo.optimize(my_compiler)
