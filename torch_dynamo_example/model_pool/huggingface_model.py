@@ -65,7 +65,7 @@ def register_models():
     model_fn_list['gpt'] = model_gpt
     model_fn_list['gpt2'] = model_gpt2
     model_fn_list['opt'] = model_opt
-    model_fn_list['llama'] = model_llama
+    # model_fn_list['llama'] = model_llama  # FIXME
     model_fn_list['falcon'] = model_falcon
 
 
