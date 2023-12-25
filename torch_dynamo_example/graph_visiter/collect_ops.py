@@ -1,5 +1,6 @@
-import torch
 import numpy as np
+import torch
+
 from torch_dynamo_example.graph_visiter.visitor import BaseTorchVisitor
 
 
@@ -38,4 +39,3 @@ class CollectOps(BaseTorchVisitor):
         self.call_function_names = set(data['call_function_names'])
         self.call_module_names = set(data['call_module_names'])
         self.call_method_names = set(data['call_method_names'])
-

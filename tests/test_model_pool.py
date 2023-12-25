@@ -10,6 +10,6 @@ def run_model(model: torch.nn.Module, example_input: typing.Dict[str, torch.Tens
 
 
 def test_huggingface_model():
-    for name, model_fn in huggingface_model.model_list.items():
+    for name, model_fn in huggingface_model.model_fn_list.items():
         model, example_input = model_fn()
         run_model(model, example_input)

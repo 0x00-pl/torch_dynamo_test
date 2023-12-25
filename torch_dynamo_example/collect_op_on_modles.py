@@ -16,7 +16,7 @@ def collect_op():
         collector.visit_module(gm)
         return gm.forward
 
-    for name, model_fn in huggingface_model.model_list.items():
+    for name, model_fn in huggingface_model.model_fn_list.items():
         model, example_input = model_fn()
         model = _dynamo.optimize(my_compiler)(model)
         model(**example_input)

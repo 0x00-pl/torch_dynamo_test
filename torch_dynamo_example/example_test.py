@@ -6,7 +6,6 @@ from torch.fx.experimental.proxy_tensor import make_fx
 
 from torch_dynamo_example.graph_visiter.collect_ops import CollectOps
 
-
 collector = CollectOps()
 
 
