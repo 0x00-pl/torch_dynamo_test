@@ -4,8 +4,8 @@ import torch
 from torch import _dynamo
 from torch.fx.experimental.proxy_tensor import make_fx
 
-from torch_dynamo_example.graph_visiter import collect_ops
-from torch_dynamo_example.model_pool import huggingface_model
+from torch_dynamo_test.graph_visiter import collect_ops
+from torch_dynamo_test.model_pool import huggingface_model
 
 
 def collect_op():

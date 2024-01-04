@@ -2,7 +2,7 @@ import typing
 
 import torch
 
-from torch_dynamo_example.model_pool import huggingface_model
+from torch_dynamo_test.model_pool import huggingface_model
 
 
 def run_model(model: torch.nn.Module, example_input: typing.Dict[str, torch.Tensor]):

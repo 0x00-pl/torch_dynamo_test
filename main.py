@@ -1,5 +1,5 @@
 import os
-from torch_dynamo_example.collect_op_on_modles import collect_op
+from torch_dynamo_test.collect_op_on_modles import collect_op
 from tests.test_model_pool import test_huggingface_model
 
 

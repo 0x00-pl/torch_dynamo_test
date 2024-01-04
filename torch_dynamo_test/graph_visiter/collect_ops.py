@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 
-from torch_dynamo_example.graph_visiter.visitor import BaseTorchVisitor
+from torch_dynamo_test.graph_visiter.visitor import BaseTorchVisitor
 
 
 class CollectOps(BaseTorchVisitor):

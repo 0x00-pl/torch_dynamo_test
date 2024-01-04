@@ -4,7 +4,7 @@ import torch
 from torch import _dynamo as torchdynamo
 from torch.fx.experimental.proxy_tensor import make_fx
 
-from torch_dynamo_example.graph_visiter.collect_ops import CollectOps
+from torch_dynamo_test.graph_visiter.collect_ops import CollectOps
 
 collector = CollectOps()
 
