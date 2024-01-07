@@ -39,7 +39,7 @@ class BaseTorchVisitor:
 
     def before_module(self, graph_module: torch.fx.GraphModule):
         _, _ = self, graph_module
-        return graph_module
+        return None
 
     def after_module(self, graph_module: torch.fx.GraphModule, result):
         _, _ = self, graph_module
@@ -47,7 +47,7 @@ class BaseTorchVisitor:
 
     def before_graph(self, graph: torch.fx.Graph):
         _, _ = self, graph
-        return graph
+        return None
 
     def after_graph(self, graph: torch.fx.Graph, result):
         _, _ = self, graph
@@ -55,7 +55,7 @@ class BaseTorchVisitor:
 
     def before_node(self, node: torch.fx.Node):
         _, _ = self, node
-        return node
+        return None
 
     def after_node(self, node: torch.fx.Node, result):
         _, _ = self, node
