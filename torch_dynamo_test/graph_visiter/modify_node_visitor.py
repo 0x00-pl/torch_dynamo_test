@@ -22,8 +22,7 @@ class ModifyNodeTorchVisitor(visitor.BaseTorchVisitor):
         new_graph = self.before_graph(graph)
         if new_graph is None:
             new_graph = torch.fx.Graph()
-            with torch.fx.Node as Node:
-                env: typing.Dict[Node, Node] = {}
+            env: typing.Dict[torch.fx.Node, torch.fx.Node] = {}
             for node in graph.nodes:
                 new_node = self.visit_node(node)
                 env[node] = new_graph.node_copy(new_node, lambda n: env[n])
